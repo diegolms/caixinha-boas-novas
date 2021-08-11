@@ -1,7 +1,6 @@
 import 'package:caixinha_boas_novas/features/caixinha_boas_novas/domain/entities/good_new.dart';
 import 'package:caixinha_boas_novas/features/caixinha_boas_novas/domain/repositories/good_new_repository.dart';
 import 'package:caixinha_boas_novas/features/caixinha_boas_novas/domain/usescases/get_good_news.dart';
-import 'package:caixinha_boas_novas/core/usescases/usecase.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
