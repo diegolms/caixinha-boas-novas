@@ -10,7 +10,7 @@ class GetGoodNews {
 
   GetGoodNews(this.repository);
 
-  Future<Either<Failure, GoodNew>?> execute() async {
+  Future<Either<Failure, GoodNew>?> call() async {
     return await repository.getGoodNews();
   }
 

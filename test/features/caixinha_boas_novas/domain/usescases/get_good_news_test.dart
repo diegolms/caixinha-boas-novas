@@ -17,23 +17,16 @@ void main() {
     usecase = GetGoodNews(mockGoodNewRepository!);
   });
 
-  final goodNew = GoodNew(text: 'test');
+  final goodNew = GoodNew(description: 'test', date: DateTime(2021, 01, 01));
 
   test(
     'should get good new from the repository',
         () async {
-      // "On the fly" implementation of the Repository using the Mockito package.
-      // When getConcreteNumberTrivia is called with any argument, always answer with
-      // the Right "side" of Either containing a test NumberTrivia object.
       when(mockGoodNewRepository!.getGoodNews())
           .thenAnswer((_) async => Right(goodNew));
-      // The "act" phase of the test. Call the not-yet-existent method.
-      final result = await usecase!.execute();
-      // UseCase should simply return whatever was returned from the Repository
+      final result = await usecase!();
       expect(result, Right(goodNew));
-      // Verify that the method has been called on the Repository
       verify(mockGoodNewRepository!.getGoodNews());
-      // Only the above method should be called and nothing more.
       verifyNoMoreInteractions(mockGoodNewRepository);
     },
   );

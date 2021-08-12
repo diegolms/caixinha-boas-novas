@@ -1,12 +1,14 @@
 import 'package:equatable/equatable.dart';
 
 class GoodNew extends Equatable {
-  final String text;
+  final String description;
+  final DateTime date;
 
   GoodNew({
-    required this.text
+    required this.description,
+    required this.date
   });
 
   @override
-  List<Object> get props => [text];
+  List<Object> get props => [description, date];
 }

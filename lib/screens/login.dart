@@ -1,3 +1,4 @@
+import 'package:caixinha_boas_novas/screens/good_news_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -170,7 +171,13 @@ class _LoginState extends State<Login> {
       width: double.infinity,
       child: RaisedButton(
         elevation: 5.0,
-        onPressed: () => {},
+        onPressed: () => {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => GoodNewsList(),
+            ),
+          ),
+        },
         padding: EdgeInsets.all(15.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
